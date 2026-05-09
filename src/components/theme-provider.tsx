@@ -1,21 +1,13 @@
 "use client";
 
 import { ThemeProvider as NextThemesProvider } from "next-themes";
-import { useEffect, useState } from "react";
 
 export function ThemeProvider({
   children,
   ...props
 }: React.ComponentProps<typeof NextThemesProvider>) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return <>{children}</>;
-  }
-
+  // Render NextThemesProvider directly.
+  // suppressHydrationWarning on <html> (in layout.tsx) handles
+  // the theme-class mismatch between server and client.
   return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
 }

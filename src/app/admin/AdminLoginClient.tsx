@@ -70,7 +70,7 @@ export default function AdminLoginClient() {
                   id="admin-email"
                   type="email"
                   className="form-input pl-10"
-                  placeholder="admin@sathiyamoorthyk.com"
+                  placeholder="abc@gmail.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -123,12 +123,12 @@ export default function AdminLoginClient() {
             </button>
           </form>
 
-          <div className="mt-6 p-4 rounded-xl bg-violet-500/5 border border-violet-500/10 text-center">
+          {/* <div className="mt-6 p-4 rounded-xl bg-violet-500/5 border border-violet-500/10 text-center">
             <p className="text-xs text-slate-500 dark:text-slate-500">
               Demo: <span className="text-violet-400">admin@sathiyamoorthyk.com</span> /{" "}
               <span className="text-violet-400">admin123</span>
             </p>
-          </div>
+          </div> */}
         </div>
       </motion.div>
     </div>

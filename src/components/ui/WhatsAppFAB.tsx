@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function WhatsAppFAB() {
   return (
     <motion.a
-      href="https://wa.me/919876543210?text=Hi%20Pattern%20Edge%2C%20I%27d%20like%20to%20discuss%20a%20project!"
+      href="https://wa.me/919600163557?text=Hi%20Pattern%20Edge%2C%20I%27d%20like%20to%20discuss%20a%20project!"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"

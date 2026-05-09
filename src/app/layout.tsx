@@ -46,7 +46,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <head>
         <link rel="canonical" href="https://sathiyamoorthyk.com" />
         <script
@@ -71,6 +71,8 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col text-slate-900 dark:text-white transition-colors duration-300">
+        {/* Skip-to-content link — WCAG 2.4.1: Bypass Blocks */}
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark">
           {children}
         </ThemeProvider>

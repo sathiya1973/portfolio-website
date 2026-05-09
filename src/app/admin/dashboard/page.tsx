@@ -735,9 +735,9 @@ export default function AdminDashboard() {
                   <h3 className="font-semibold text-slate-900 dark:text-white">General Settings</h3>
                   {[
                     { label: "Site Name", value: "SATHIYAMOORTHY K" },
-                    { label: "Site URL", value: "https://sathiyamoorthyk.com" },
-                    { label: "Contact Email", value: "hello@sathiyamoorthyk.com" },
-                    { label: "Phone / WhatsApp", value: "+91 98765 43210" },
+                    { label: "Site URL", value: "https://sathiyamoorthyk.vercel.app" },
+                    { label: "Contact Email", value: "sathiyamurthyk@gmail.com" },
+                    { label: "Phone / WhatsApp", value: "+91 96001 63557" },
                     { label: "Google Analytics ID", value: "G-XXXXXXXXXX" },
                   ].map(({ label, value }) => (
                     <div key={label}>

@@ -299,19 +299,25 @@ export default function CategoryPageClient({ categorySlug }: Props) {
               </p>
             </motion.div>
 
-            {/* Category pills */}
+            {/* Category pills - WCAG AA compliant active state */}
             <div className="flex flex-wrap gap-2 mt-8">
-              {CATEGORIES.map((c) => (
-                <Link key={c.slug} href={`/portfolio/${c.slug}`}
-                  className={`px-4 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 ${
-                    c.slug === categorySlug
-                      ? "bg-violet-500 border-violet-500 text-white"
-                      : "border-black/10 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:border-violet-500/50 hover:text-violet-400"
-                  }`}
-                >
-                  {c.label}
-                </Link>
-              ))}
+              {CATEGORIES.map((c) => {
+                const isActive = c.slug === categorySlug;
+                return (
+                  <Link
+                    key={c.slug}
+                    href={`/portfolio/${c.slug}`}
+                    className={`px-4 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 ${
+                      isActive
+                        ? "bg-[#1A3263] border-[#B5E18B] text-[#B5E18B]"
+                        : "border-white/10 text-[#EAE6BC]/60 hover:border-[#B5E18B]/60 hover:text-[#B5E18B]"
+                    }`}
+                    style={isActive ? { boxShadow: "0 0 0 1px #B5E18B" } : undefined}
+                  >
+                    {c.label}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
