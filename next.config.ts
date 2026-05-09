@@ -2,7 +2,18 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["patternedge.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "patternedge.com",
+      },
+      {
+        protocol: "https",
+        // Supabase storage — covers any project subdomain
+        hostname: "*.supabase.co",
+        pathname: "/storage/v1/object/public/**",
+      },
+    ],
     formats: ["image/avif", "image/webp"],
   },
   compress: true,

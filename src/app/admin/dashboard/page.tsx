@@ -8,6 +8,19 @@ import {
   Users, Eye, Plus, Edit, Trash2, X, Check
 } from "lucide-react";
 
+interface PortfolioProject {
+  id: number;
+  title: string;
+  cat: string;
+  year: string;
+  status: string;
+  image: string;
+  images?: string[];
+  description?: string;
+  website_url?: string;
+  [key: string]: unknown;
+}
+
 const sidebarLinks = [
   { id: "dashboard", icon: LayoutDashboard, label: "Dashboard" },
   { id: "portfolio", icon: FolderOpen, label: "Portfolio" },
@@ -51,7 +64,7 @@ export default function AdminDashboard() {
     }))
   );
 
-  const [portfolioProjects, setPortfolioProjects] = useState([
+  const [portfolioProjects, setPortfolioProjects] = useState<PortfolioProject[]>([
     { id: 1, title: "Luminary Brand Identity", cat: "Branding", year: "2024", status: "Live", image: "/images/portfolio_luminary.png" },
     { id: 2, title: "Nexus Finance App", cat: "UI/UX", year: "2024", status: "Live", image: "" },
     { id: 3, title: "Terra Packaging", cat: "Packaging", year: "2024", status: "Live", image: "" },
@@ -77,9 +90,16 @@ export default function AdminDashboard() {
 
       if (data && !error) {
         // Map database fields to UI state (e.g., category -> cat)
-        const mapped = data.map(p => ({
-          ...p,
-          cat: p.category
+        const mapped: PortfolioProject[] = data.map((p: Record<string, unknown>) => ({
+          id: p.id as number,
+          title: (p.title as string) || "",
+          cat: (p.category as string) || "",
+          year: (p.year as string) || "",
+          status: (p.status as string) || "Draft",
+          image: (p.image as string) || "",
+          images: Array.isArray(p.images) ? (p.images as string[]) : undefined,
+          description: (p.description as string) || undefined,
+          website_url: (p.website_url as string) || undefined,
         }));
         setPortfolioProjects(mapped);
       }
@@ -968,12 +988,25 @@ export default function AdminDashboard() {
                     }
 
                     if (data && !error) {
+                      const savedRow: PortfolioProject = {
+                        id: (data as Record<string, unknown>).id as number,
+                        title: ((data as Record<string, unknown>).title as string) || "",
+                        cat: ((data as Record<string, unknown>).category as string) || "",
+                        year: ((data as Record<string, unknown>).year as string) || "",
+                        status: ((data as Record<string, unknown>).status as string) || "Draft",
+                        image: ((data as Record<string, unknown>).image as string) || "",
+                        images: Array.isArray((data as Record<string, unknown>).images)
+                          ? ((data as Record<string, unknown>).images as string[])
+                          : undefined,
+                        description: ((data as Record<string, unknown>).description as string) || undefined,
+                        website_url: ((data as Record<string, unknown>).website_url as string) || undefined,
+                      };
                       if (editingProject.isNew) {
-                        setPortfolioProjects([{...data, cat: data.category}, ...portfolioProjects]);
+                        setPortfolioProjects([savedRow, ...portfolioProjects]);
                         showToast("Project created successfully ✓");
                       } else {
                         setPortfolioProjects(portfolioProjects.map(p =>
-                          p.id === editingProject.id ? {...data, cat: data.category} : p
+                          p.id === editingProject.id ? savedRow : p
                         ));
                         showToast("Project updated successfully ✓");
                       }
