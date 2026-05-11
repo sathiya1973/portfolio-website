@@ -5,7 +5,7 @@ import WhatsAppFAB from "@/components/ui/WhatsAppFAB";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sathiyamoorthyk.com"),
+  metadataBase: new URL("https://sathiyamoorthyk.vercel.app"),
   title: {
     default: "SATHIYAMOORTHY K — Creative Design Agency | UI/UX, Branding & Web Design",
     template: "%s | SATHIYAMOORTHY K",
@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     "creative agency", "UI UX design", "branding agency", "logo design",
     "web design", "graphic design", "packaging design", "digital marketing", "SATHIYAMOORTHY K",
   ],
-  authors: [{ name: "SATHIYAMOORTHY K", url: "https://sathiyamoorthyk.com" }],
+  authors: [{ name: "SATHIYAMOORTHY K", url: "https://sathiyamoorthyk.vercel.app" }],
   creator: "SATHIYAMOORTHY K",
   publisher: "SATHIYAMOORTHY K",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://sathiyamoorthyk.com",
+    url: "https://sathiyamoorthyk.vercel.app",
     siteName: "SATHIYAMOORTHY K",
     title: "SATHIYAMOORTHY K — Creative Design Agency",
     description: "Premium creative agency specializing in UI/UX, branding, and digital experiences.",
@@ -48,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <head>
-        <link rel="canonical" href="https://sathiyamoorthyk.com" />
+        <link rel="canonical" href="https://sathiyamoorthyk.vercel.app" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -56,14 +56,14 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "SATHIYAMOORTHY K",
-              url: "https://sathiyamoorthyk.com",
-              logo: "https://sathiyamoorthyk.com/logo.png",
+              url: "https://sathiyamoorthyk.vercel.app",
+              logo: "https://sathiyamoorthyk.vercel.app/logo.png",
               description: "Premium creative design agency specializing in UI/UX, branding, web design and digital marketing.",
               address: { "@type": "PostalAddress", addressCountry: "IN" },
               sameAs: [
                 "https://twitter.com/sathiyamoorthyk",
-                "https://instagram.com/sathiyamoorthyk",
-                "https://linkedin.com/company/sathiyamoorthyk",
+                "https://www.instagram.com/patterenedge/?hl=en",
+                "https://www.linkedin.com/in/sathiyamurthyk/",
               ],
               contactPoint: { "@type": "ContactPoint", contactType: "customer service", email: "hello@sathiyamoorthyk.com" },
             }),

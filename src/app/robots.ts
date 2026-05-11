@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/admin/", "/api/"],
       },
     ],
-    sitemap: "https://sathiyamoorthyk.com/sitemap.xml",
+    sitemap: "https://sathiyamoorthyk.vercel.app//sitemap.xml",
   };
 }
