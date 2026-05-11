@@ -5,20 +5,21 @@ import { Target, Eye, Cpu, Layers, ArrowRight, Lightbulb, PenTool, Layout, Code,
 import Link from "next/link";
 
 const experiences = [
-  { role: "UI / Visual Designer", company: "Tech Solutions Inc.", period: "Jan 2018 - Present", desc: "Leading the UI design team, creating comprehensive design systems and interactive prototypes." },
-  { role: "Visual Designer", company: "Creative Agency", period: "Feb 2015 - Dec 2017", desc: "Designed responsive websites, brand identities, and marketing materials for diverse clients." },
+  { role: "Sr.UI /UX- Visual Designer", company: "Integra Software Services Pvt ltd.", period: "Jan 2021 - Present", desc: "Leading the UI/UX design  team, creating comprehensive design systems and interactive prototypes." },
+  { role: "UI/UX-Visual Designer", company: "PRIMUS GLOBAL TECHNOLOGIES Pvt.Ltd.", period: "Jan 2019 - June 2020", desc: "Designed responsive websites, brand identities, and marketing materials for diverse clients." },
 ];
 
 const education = [
-  { degree: "Diploma in Multimedia Designing", institution: "Design Institute", period: "2014 - 2015", desc: "Specialized in UI/UX, interaction design, and digital media." },
-  { degree: "Bachelor of Engineering", institution: "University of Technology", period: "2010 - 2014", desc: "Foundation in computer science, software engineering, and problem-solving." },
+  { degree: "Diploma in Multimedia Designing", institution: "Soft View Design Institute", period: "2006 - 2007", desc: "Specialized in UI/UX, interaction design, and digital media." },
+  { degree: "Bachelor of Engineering", institution: "Bharathidasan University", period: "2000 - 2004", desc: "Foundation in computer science, software engineering, and problem-solving." },
 ];
 
 const skills = [
-  { name: "Photoshop", percentage: 87, color: "text-blue-500" },
+  { name: "Photoshop", percentage: 77, color: "text-blue-500" },
   { name: "Illustrator", percentage: 75, color: "text-orange-500" },
-  { name: "Figma", percentage: 78, color: "text-purple-500" },
-  { name: "Adobe XD", percentage: 75, color: "text-pink-500" },
+  { name: "Figma / Adobe Xd", percentage: 78, color: "text-purple-500" },
+  { name: "Canva", percentage: 80, color: "text-green-500" },
+  
 ];
 
 const processes = [
@@ -116,8 +117,8 @@ export default function AboutPageClient() {
               </p>
             </div>
             <div className="mt-8">
-              <Link href="/contact" className="btn-primary w-full sm:w-auto justify-center">
-                <span className="flex items-center gap-2">Contact me <ArrowRight size={16} /></span>
+              <Link href="/portfolio" className="btn-primary w-full sm:w-auto justify-center">
+                <span className="flex items-center gap-2">View More <ArrowRight size={16} /></span>
               </Link>
             </div>
           </motion.div>
